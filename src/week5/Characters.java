@@ -9,7 +9,7 @@ public class Characters {
     public Characters() {
     }
 
-    public void addCharactor(Character character) {
+    public void addCharacter(Character character) {
         this.chars = new LinkedListNode<>(character, this.chars);
     }
 
@@ -33,8 +33,8 @@ public class Characters {
 
     public static void main(String[] args) {
         Characters characters = new Characters();
-        characters.addCharactor(new Character());
-        characters.addCharactor(new Character());
+        characters.addCharacter(new Character());
+        characters.addCharacter(new Character());
         characters.winBattle(500);
         System.out.println();
     }
