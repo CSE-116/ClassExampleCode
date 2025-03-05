@@ -8,6 +8,10 @@ public class GameItem {
     public void use() {
         System.out.println("Item Used");
     }
+    @Override
+    public String toString() {
+        return "x: " + this.xLoc + " y:" + this.yLoc;
+    }
 }
 public class Weapon extends GameItem {
     private int damage;
@@ -19,12 +23,21 @@ public class Weapon extends GameItem {
     public void use() {
         System.out.println("Damage dealt: " + this.damage);
     }
+    public String toString() {
+        String out = "Weapon Damage: " + this.damage;
+        return out;
+    }
 }
 public class HealthPotion extends GameItem {
     private int increase;
     public HealthPotion(double xLoc, double yLoc, int increase) {
         super(xLoc, yLoc);
         this.increase = increase;
+    }
+    @Override
+    public String toString() {
+        String out = super.toString() + " - Health Potion [" + this.increase + "]";
+        return out;
     }
 }
 public class GameItemMain {
@@ -33,5 +46,7 @@ public class GameItemMain {
         HealthPotion potion = new HealthPotion(10.0, 0.0, 6);
         weapon.use();
         potion.use();
+        System.out.println(weapon);
+        System.out.println(potion);
     }
 }
