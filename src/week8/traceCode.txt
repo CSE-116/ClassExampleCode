@@ -1,0 +1,27 @@
+package week8;
+
+public class BinaryTreeNode<A> {
+    private A value;
+    private BinaryTreeNode<A> left;
+    private BinaryTreeNode<A> right;
+
+    public BinaryTreeNode(A value, BinaryTreeNode<A> left, BinaryTreeNode<A> right) {
+        this.value = value;
+        this.right = right;
+        this.left = left;
+    }
+    public static <A> void traversal(BinaryTreeNode<A> node) {
+        if (node != null) {
+            traversal(node.left);
+            traversal(node.right);
+            System.out.print(node.value + " ");
+        }
+    }
+    public static void main(String[] args) {
+        BinaryTreeNode<String> root = new BinaryTreeNode<>("day", null, null);
+        root.left = new BinaryTreeNode<>("have", null, null);
+        root.right = new BinaryTreeNode<>("great", null, null);
+        root.right.left = new BinaryTreeNode<>("a", null, null);
+        traversal(root);
+    }
+}
