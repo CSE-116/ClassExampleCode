@@ -18,5 +18,8 @@ public abstract class GameItem {
         return "x: "+this.xLoc+" y:"+this.yLoc;
     }
 
+    public void use(Player player) {
+        player.setHP(player.getHP() + 20);
+    }
 
 }

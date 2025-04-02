@@ -4,6 +4,9 @@ public interface Usable {
 public abstract class GameItem {
     private double loc;
     public GameItem(double loc) {this.loc = loc;}
+    public void use(Player player) {
+        player.setHP(player.getHP() + 20);
+    }
 }
 public class Weapon extends GameItem implements Usable {
     private int damage;
@@ -20,10 +23,6 @@ public class Weapon extends GameItem implements Usable {
 public class Potion extends GameItem implements Usable {
    public Potion(double loc) {
         super(loc);
-    }
-    @Override
-    public void use(Player player) {
-        player.setHP(player.getHP() + 20);
     }
 }
 public class Player {
