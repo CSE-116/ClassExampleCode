@@ -1,0 +1,54 @@
+public interface Usable {
+    void use(Player player);
+}
+public abstract class GameItem {
+    private double loc;
+    public GameItem(double loc) {this.loc = loc;}
+}
+public class Weapon extends GameItem implements Usable {
+    private int damage;
+    public Weapon(double loc, int damage) {
+        super(loc);
+        this.damage = damage;
+    }
+    public int getDamage() {return damage;}
+    @Override
+    public void use(Player player) {
+        player.setDamage(this.damage);
+    }
+}
+public class Potion extends GameItem implements Usable {
+   public Potion(double loc) {
+        super(loc);
+    }
+    @Override
+    public void use(Player player) {
+        player.setHP(player.getHP() + 20);
+    }
+}
+public class Player {
+  private int HP = 50;
+  private int damage = 4;
+  private ArrayList<Usable> inventory=new ArrayList<>();
+  public void pickUp(Usable item) {
+    this.inventory.add(item);
+  }
+  public void useAllItems() {
+    for (Usable item : this.inventory) {
+      item.use(this);
+    }
+  }
+  public int getHP() {return HP;}
+  public void setHP(int HP) {this.HP = HP;}
+  public void setDamage(int damage) {
+    this.damage = damage;
+  }
+}
+public static void main(String[] args) {
+    Player player = new Player();
+    Weapon weapon = new Weapon(-5.0, 15);
+    Usable potion = new Potion(3.5);
+    player.pickUp(weapon);
+    player.pickUp(potion);
+    player.useAllItems();
+}
