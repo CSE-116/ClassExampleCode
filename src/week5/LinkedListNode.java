@@ -57,6 +57,12 @@ public class LinkedListNode<T> {
         }
     }
 
+    public void appendLoop(T value) {
+        LinkedListNode<T> node = this;
+        for(; node.next != null; node = node.next);
+        node.next = new LinkedListNode<>(value, null);
+    }
+
     public void insert(T value, int loc) {
         if (loc == 0) {
             this.next = new LinkedListNode<>(this.value, this.next);
