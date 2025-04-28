@@ -59,6 +59,14 @@ public class LinkedListNode<T> {
 
     public void appendLoop(T value) {
         LinkedListNode<T> node = this;
+        while(node.next != null){
+            node = node.next;
+        }
+        node.next = new LinkedListNode<>(value, null);
+    }
+
+    public void appendLoopDumb(T value) {
+        LinkedListNode<T> node = this;
         for(; node.next != null; node = node.next);
         node.next = new LinkedListNode<>(value, null);
     }
