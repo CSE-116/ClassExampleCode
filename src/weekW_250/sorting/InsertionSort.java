@@ -20,7 +20,7 @@ public class InsertionSort<T> implements Sorter<T> {
         for (T valueToInsert : input) {
             int location = 0;
             for (T valueToCompare : output) {
-                if (comparator.compare(valueToCompare, valueToInsert)) {
+                if (this.comparator.compare(valueToCompare, valueToInsert)) {
                     location++;
                 }
             }

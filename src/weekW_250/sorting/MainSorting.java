@@ -1,12 +1,10 @@
 package weekW_250.sorting;
 
 import week7.IntDecreasing;
-import weekW_250.AppendPrependArrayList;
-import weekW_250.IAppendPrependDS;
 import weekW_250.Timable;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 public class MainSorting {
 
@@ -18,7 +16,7 @@ public class MainSorting {
         return elapsedTime;
     }
 
-    private static void populate(int n, ArrayList<Integer> list){
+    private static void populate(int n, List<Integer> list){
         for (int i = 0; i < n; i++) {
             list.add((int)(Math.random() * 1000));
         }
@@ -29,7 +27,8 @@ public class MainSorting {
         ArrayList<Integer> numbers = new ArrayList<>();
         populate(n, numbers);
         long elapsedTime = timeIt(() -> {
-            new MergeSort<>(new IntDecreasing()).sort(numbers);
+            List<Integer> output = new MergeSort<>(new IntDecreasing()).sort(numbers);
+//            System.out.println(output);
         });
         System.out.println("method took " + elapsedTime + "ms");
     }
