@@ -1,6 +1,6 @@
 package topic4_linkedlists;
 
-import topic3_classes.Character;
+import topic2_classes.Character;
 
 public class Characters {
 

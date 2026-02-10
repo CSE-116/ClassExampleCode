@@ -7,7 +7,7 @@ public class HashMapExample {
         HashMap<String, Integer> bills = new HashMap<>();
 
         bills.put("Allen", 17);
-        bills.put("Coleman", 0);
+        bills.put("Kincaid", 86);
         System.out.print("What is Allen's number? ");
         System.out.println(bills.get("Allen"));
         System.out.println(bills);

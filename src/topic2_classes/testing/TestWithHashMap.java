@@ -1,0 +1,27 @@
+package topic2_classes.testing;
+
+import org.junit.Test;
+
+import topic7_testing.PlusMinus;
+
+import java.util.HashMap;
+
+import static org.junit.Assert.assertTrue;
+
+public class TestWithHashMap {
+    @Test
+    public void testPlusMinus(){
+        HashMap<Integer, String> testCases = new HashMap<>();
+        testCases.put(95, "");
+        testCases.put(78, "+");
+        testCases.put(51, "-");
+        testCases.put(100, "+");
+
+        for(int grade : testCases.keySet()){
+            String expectedOutput = testCases.get(grade);
+            String computedOutput = PlusMinus.plusMinus(grade);
+            assertTrue(grade + " should return " + expectedOutput + " but got: " + computedOutput, expectedOutput.equals(computedOutput));
+        }
+
+    }
+}
