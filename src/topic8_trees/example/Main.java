@@ -2,6 +2,7 @@ package topic8_trees.example;
 
 import topic5_inheritance.HealthPotion;
 import topic8_trees.BST;
+import topic8_trees.TreeTraversals;
 
 public class Main {
 
@@ -16,7 +17,7 @@ public class Main {
         bst.insert(new HealthPotion(5.0, 10.2, 100));
         bst.insert(new HealthPotion(5.0, 10.2, 6));
 
-        System.out.println(bst.getRoot().inOrderTraversal(bst.getRoot()));
+        System.out.println(TreeTraversals.inOrderTraversal(bst.getRoot()));
     }
 
 }

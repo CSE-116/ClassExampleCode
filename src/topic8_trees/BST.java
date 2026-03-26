@@ -43,6 +43,32 @@ public class BST<A> {
         }
     }
 
+    public void insertIterative(A toInsert){
+        if (this.root == null) {
+            this.root = new BinaryTreeNode<>(toInsert, null, null);
+        } else {
+            BinaryTreeNode<A> node = this.root;
+            while(true) {
+                if (this.comparator.compare(toInsert, node.getValue())) {
+                    if (node.getLeft() == null) {
+                        node.setLeft(new BinaryTreeNode<>(toInsert, null, null));
+                        break;
+                    } else {
+                        node = node.getLeft();
+                    }
+                } else {
+                    // ties go right
+                    if (node.getRight() == null) {
+                        node.setRight(new BinaryTreeNode<>(toInsert, null, null));
+                        break;
+                    } else {
+                        node = node.getRight();
+                    }
+                }
+            }
+        }
+    }
+
     public boolean find(A value) {
         if (this.root == null) {
             return false;
@@ -69,6 +95,8 @@ public class BST<A> {
         }
     }
 
+
+
     private static void example1() {
         BST<Integer> bst = new BST<>(new IntDecreasing());
 
@@ -84,7 +112,7 @@ public class BST<A> {
         System.out.println(bst.find(2));
         System.out.println(bst.find(7));
 
-        System.out.println(bst.root.inOrderTraversal(bst.root));
+        System.out.println(TreeTraversals.inOrderTraversal(bst.root));
     }
 
     private static void example2() {
@@ -102,7 +130,7 @@ public class BST<A> {
         System.out.println(bst.find(8));
         System.out.println(bst.find(3));
 
-        System.out.println(bst.root.inOrderTraversal(bst.root));
+        System.out.println(TreeTraversals.inOrderTraversal(bst.root));
     }
 
     private static void example3() {
@@ -120,7 +148,7 @@ public class BST<A> {
         System.out.println(bst.find(8));
         System.out.println(bst.find(3));
 
-        System.out.println(bst.root.inOrderTraversal(bst.root));
+        System.out.println(TreeTraversals.inOrderTraversal(bst.root));
     }
 
     public static void main(String[] args) {

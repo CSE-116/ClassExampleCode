@@ -35,42 +35,8 @@ public class BinaryTreeNode<A> {
         this.right = right;
     }
 
-    public String preOrderTraversal(BinaryTreeNode<A> node) {
-        if (node != null) {
-            String out = "";
-            out += node.value.toString() + " ";
-            out += preOrderTraversal(node.left);
-            out += preOrderTraversal(node.right);
-            return out;
-        } else {
-            return "";
-        }
-    }
 
-    public String postOrderTraversal(BinaryTreeNode<A> node) {
-        if (node != null) {
-            String out = "";
-            out += postOrderTraversal(node.left);
-            out += postOrderTraversal(node.right);
-            out += node.value.toString() + " ";
-            return out;
-        } else {
-            return "";
-        }
-    }
-
-    public String inOrderTraversal(BinaryTreeNode<A> node) {
-        if (node != null) {
-            String out = "";
-            out += inOrderTraversal(node.left);
-            out += node.value.toString() + " ";
-            out += inOrderTraversal(node.right);
-            return out;
-        } else {
-            return "";
-        }
-    }
-
+    /*** Examples ***/
 
     public static <A> void traversal(BinaryTreeNode<A> node) {
         if (node != null) {
@@ -97,9 +63,9 @@ public class BinaryTreeNode<A> {
         root.right.left = new BinaryTreeNode<>(7, null, null);
         root.right.right = new BinaryTreeNode<>(14, null, null);
 
-        System.out.println(root.preOrderTraversal(root));
-        System.out.println(root.postOrderTraversal(root));
-        System.out.println(root.inOrderTraversal(root));
+        System.out.println(TreeTraversals.preOrderTraversal(root));
+        System.out.println(TreeTraversals.inOrderTraversal(root));
+        System.out.println(TreeTraversals.postOrderTraversal(root));
     }
 
 

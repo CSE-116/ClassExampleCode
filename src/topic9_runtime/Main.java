@@ -4,14 +4,6 @@ import java.util.ArrayList;
 
 public class Main {
 
-    private static long timeIt(Timable method){
-        long start = System.currentTimeMillis();
-        method.run();
-        long end = System.currentTimeMillis();
-        long elapsedTime = end - start;
-        return elapsedTime;
-    }
-
     private static boolean isSorted(ArrayList<Integer> input){
         return false;
     }
@@ -24,10 +16,11 @@ public class Main {
 
     public static void main(String[] args) {
         int n = 1000;
-        long elapsedTime = timeIt(() -> {
+        long elapsedTime = TimingUtils.timeIt(() -> {
             populate(n, new AppendPrependArrayList<>());
         });
-        System.out.println("method took " + elapsedTime + "ms");
+        System.out.println(elapsedTime + "ms to insert " + n + " values in a BST");
+
     }
 
 }
