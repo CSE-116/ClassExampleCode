@@ -1,4 +1,4 @@
-package topic1_java;
+package topicx_testingtips;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -6,9 +6,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-
-import topicx_testingtips.City;
-import topicx_testingtips.Location;
 
 public class CountriesExample {
 
