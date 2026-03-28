@@ -5,7 +5,7 @@ public class Trace {
     public static void main(String[] args) {
         int anInt = 10;
         double aDouble = 5.8;
-        boolean Boolean = true;
+        boolean aBoolean = true;
         String aString = "6.3";
         anInt = 20;
     }

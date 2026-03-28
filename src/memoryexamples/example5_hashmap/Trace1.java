@@ -7,9 +7,9 @@ public class Trace1 {
     public static void main(String[] args) {
         HashMap<String, Integer> bills = new HashMap<>();
         bills.put("Allen", 17);
-        bills.put("Diggs", 14);
-        for (String keys : bills.keySet()) {
-            System.out.println(keys);
+        bills.put("Knox", 88);
+        for (String key : bills.keySet()) {
+            System.out.println(key);
         }
     }
 
